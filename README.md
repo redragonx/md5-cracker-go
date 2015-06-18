@@ -1,4 +1,4 @@
-Backup verifier program in Go.  
+MD5 cracker program in Go.  
 =================
 
 Abstract: 
@@ -9,29 +9,23 @@ This program bruteforces MD5 hashes.
 Description of the program:
 ----------------------------
 ```
-Backup verify script.
+Simple MD5 cracker.
 
 Usage:
-  vfy [options] <origDir> <backupDir>
-  vfy (-h | --help)
+    md5cracker
+    md5cracker <HashsFilePath> <WordListFilePath>
 
-This program compares two directories recursively, and alerts the user of any
-differences. It compares files by size and **optionally** by a random sample of
-contents. The results are summarized into a difference percentage so it can be
-used to easily determine if a backup is valid and recent.
-
-Options:
-  -v, --verbose                    Print what is being done
-  -m, --machine                    Output summary in machine-readable format
-  -x, --one-filesystem             Stay on one file system (in <original>)
-  -s, --samples COUNT              Comparison sample count [default: 0]
-  -h, --help                       Display this screen
+This program outputs some plaintext matching MD5 hashes that you give to the
+program. There are two modes you can use with the cracker. You can crack one MD5
+hash or multiple MD5 hashes. For the first mode, just run the program with no
+arguments. Or provide two file paths for a set of hashes you wish to crack and
+the word list file to crack the hashes with.
 ```
 
 How to install on your system
 -----------------------------
 
 1. Setup Go, you can read how [here](https://golang.org/doc/install)
-2. run `go get https://github.com/redragonx/vfy-go`
+2. run `go get https://github.com/redragonx/md5-cracker-go
 3. cd into the src dir and run `go install`
 4. If done properly, you can run the program anywhere.
